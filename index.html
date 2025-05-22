@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programmieren lernen - lerne Coden mit einfachen Übungen</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
 
     <style>
         body {
@@ -20,33 +22,405 @@
             background: #FFF;
             padding: 8px;
             text-align: center;
-            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);;
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
             font-size: 20px;
             color: #FF6B6B;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+
+        h2 {
+            font-size: 16px;
+            color: #FF6B6B;
+            margin-block-start: 0;
+            margin-block-end: 0;
         }
 
         .subheadline {
             font-size: 14px;
             color: #777;
         }
+
+        .main {
+            padding: 16px;
+        }
+
+        .card {
+            background: #FFF;
+            padding: 16px;
+            border-radius: 12px;
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+            margin-bottom: 16px;
+        }
+
+        .card>* {
+            margin-bottom: 8px;
+        }
+
+        code {
+            background: #eef2f5;
+            padding: 4px 6px;
+            border-radius: 4px;
+        }
+
+        pre {
+            background: #eef2f5;
+            line-height: 24px;
+            padding: 8px;
+            border-radius: 6px;
+        }
+
+        pre>code {
+            padding: 4px 0px;
+        }
+
+        button {
+            width: 100%;
+            background: #FF6B6B;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 8px;
+            margin-top: 8px;
+        }
     </style>
 </head>
+
 <body>
     <header>
         <h1>JS Basics</h1>
         <div class="subheadline">Einfach & mobil lernen</div>
     </header>
 
-    <h2>1. Console.log</h2>
-    <div>Erklärung</div>
+    <div class="main">
+        <div class="card">
+            <h2>1. Console.log</h2>
+            <div>Bitte schaue dir den nachfolgenden Code an:</div>
+            <pre><code>console.log('Hallo Welt!');</code></pre>
+            <div><strong>Übung:</strong> Was macht dieser Code</div>
+            <label>
+                <input type="radio" name="q1" value="correct"> Zeigt "Hallo Welt!" in der Console an.
+            </label>
+            <label>
+                <input type="radio" name="q1" value="incorrect"> Öffnet die Console
+            </label>
+            <button onclick="check(1)">Prüfen</button>
+            <div id="r1"></div>
 
-    <h2>2. Variablen</h2>
+        </div>
 
+        <div class="card">
+            <h2>2. Variablen</h2>
+            <div>Speichere Daten mit <code>let</code>:</div>
+            <pre><code>let myName = 'Junus';
+console.log('Hallo ' + Junus);</code></pre>
+            <div><strong>Übung:</strong> Was wird angezeigt?</div>
+            <label>
+                <input type="radio" name="q2" value="incorrect"> Zeigt einen Fehler an
+            </label>
+            <label>
+                <input type="radio" name="q2" value="correct"> Zeigt "Hallo Junus" an
+            </label>
+            <button onclick="check(2)">Prüfen</button>
+            <div id="r2"></div>
+        </div>
 
-    <h2>3. Strings verknüpfen</h2>
+        <div class="card">
+            <h2>3. String-Konkatenation</h2>
+            <div>Verknüpfe mit <code>+</code>:</div>
+            <pre><code>console.log("JS" + " Rocks");</code></pre>
+            <div><strong>Übung:</strong> Was zeigt die Konsole?</div>
+            <label>
+                <input type="radio" name="q3" value="incorrect"> JSRocks
+            </label>
+            <label>
+                <input type="radio" name="q3" value="correct"> JS Rocks
+            </label>
+            <button onclick="check(3)">Prüfen</button>
+            <div id="r3"></div>
+        </div>
 
+        <!-- 4. Kommentare -->
+        <div class="card">
+            <h2>4. Kommentare</h2>
+            <div>Kommentare mit <code>//</code> oder <code>/* ... */</code>:</div>
+            <pre><code>// console.log('Das wird nicht ausgegeben');
+/* console.log('Auch nicht'); */
+console.log('Nur dieser Text wird ausgegeben');</code></pre>
+            <div><strong>Übung:</strong> Was erscheint in der Konsole?</div>
+            <label>
+                <input type="radio" name="q4" value="incorrect"> Nichts, weil alles kommentiert ist.
+            </label>
+            <label>
+                <input type="radio" name="q4" value="correct"> Nur „Nur dieser Text wird ausgegeben“.
+            </label>
+            <button onclick="check(4)">Prüfen</button>
+            <div id="r4"></div>
+        </div>
+
+        <!-- 5. Zahlen und Rechnen -->
+        <div class="card">
+            <h2>5. Zahlen und Rechnen</h2>
+            <div>Einfaches Rechnen:</div>
+            <pre><code>console.log(2 + 3 * 4);</code></pre>
+            <div><strong>Übung:</strong> Was zeigt die Konsole?</div>
+            <label>
+                <input type="radio" name="q5" value="correct"> 14
+            </label>
+            <label>
+                <input type="radio" name="q5" value="incorrect"> 20
+            </label>
+            <button onclick="check(5)">Prüfen</button>
+            <div id="r5"></div>
+        </div>
+
+        <!-- 6. Vergleichsoperatoren -->
+        <div class="card">
+            <h2>6. Vergleichsoperatoren</h2>
+            <div>Gleichheit prüfen:</div>
+            <pre><code>console.log(5 == '5');</code></pre>
+            <div><strong>Übung:</strong> Was wird angezeigt?</div>
+            <label>
+                <input type="radio" name="q6" value="correct"> true
+            </label>
+            <label>
+                <input type="radio" name="q6" value="incorrect"> false
+            </label>
+            <button onclick="check(6)">Prüfen</button>
+            <div id="r6"></div>
+        </div>
+
+        <!-- 7. Strikte Gleichheit -->
+        <div class="card">
+            <h2>7. Strikte Gleichheit</h2>
+            <div>Typ und Wert prüfen:</div>
+            <pre><code>console.log(5 === '5');</code></pre>
+            <div><strong>Übung:</strong> Was zeigt die Konsole?</div>
+            <label>
+                <input type="radio" name="q7" value="incorrect"> true
+            </label>
+            <label>
+                <input type="radio" name="q7" value="correct"> false
+            </label>
+            <button onclick="check(7)">Prüfen</button>
+            <div id="r7"></div>
+        </div>
+
+        <!-- 8. if-Anweisung -->
+        <div class="card">
+            <h2>8. if-Anweisung</h2>
+            <div>Bedingt ausführen:</div>
+            <pre><code>let x = 10;
+if (x > 5) {
+  console.log('Groß');
+} else {
+  console.log('Klein');
+}</code></pre>
+            <div><strong>Übung:</strong> Was erscheint?</div>
+            <label>
+                <input type="radio" name="q8" value="correct"> Groß
+            </label>
+            <label>
+                <input type="radio" name="q8" value="incorrect"> Klein
+            </label>
+            <button onclick="check(8)">Prüfen</button>
+            <div id="r8"></div>
+        </div>
+
+        <!-- 9. for-Schleife -->
+        <div class="card">
+            <h2>9. for-Schleife</h2>
+            <div>Schleife von 0 bis 2:</div>
+            <pre><code>for (let i = 0; i < 3; i++) {
+  console.log(i);
+}</code></pre>
+            <div><strong>Übung:</strong> Welche Zahlen werden ausgegeben?</div>
+            <label>
+                <input type="radio" name="q9" value="correct"> 0, 1, 2
+            </label>
+            <label>
+                <input type="radio" name="q9" value="incorrect"> 1, 2, 3
+            </label>
+            <button onclick="check(9)">Prüfen</button>
+            <div id="r9"></div>
+        </div>
+
+        <!-- 10. while-Schleife -->
+        <div class="card">
+            <h2>10. while-Schleife</h2>
+            <div>Schleife solange i &lt; 2:</div>
+            <pre><code>let i = 0;
+while (i < 2) {
+  console.log(i);
+  i++;
+}</code></pre>
+            <div><strong>Übung:</strong> Was zeigt die Konsole?</div>
+            <label>
+                <input type="radio" name="q10" value="correct"> 0, 1
+            </label>
+            <label>
+                <input type="radio" name="q10" value="incorrect"> 1, 2
+            </label>
+            <button onclick="check(10)">Prüfen</button>
+            <div id="r10"></div>
+        </div>
+
+        <!-- 11. Funktionen -->
+        <div class="card">
+            <h2>11. Funktionen</h2>
+            <div>Einfach definieren und aufrufen:</div>
+            <pre><code>function sagHallo() {
+  console.log('Hallo!');
+}
+sagHallo();</code></pre>
+            <div><strong>Übung:</strong> Was passiert?</div>
+            <label>
+                <input type="radio" name="q11" value="incorrect"> Nichts, weil sagHallo nie benutzt wird.
+            </label>
+            <label>
+                <input type="radio" name="q11" value="correct"> Es erscheint „Hallo!“.
+            </label>
+            <button onclick="check(11)">Prüfen</button>
+            <div id="r11"></div>
+        </div>
+
+        <!-- 12. Parameter -->
+        <div class="card">
+            <h2>12. Parameter</h2>
+            <div>Mit Parameter arbeiten:</div>
+            <pre><code>function add(a, b) {
+  console.log(a + b);
+}
+add(3, 4);</code></pre>
+            <div><strong>Übung:</strong> Was zeigt die Konsole?</div>
+            <label>
+                <input type="radio" name="q12" value="correct"> 7
+            </label>
+            <label>
+                <input type="radio" name="q12" value="incorrect"> 34
+            </label>
+            <button onclick="check(12)">Prüfen</button>
+            <div id="r12"></div>
+        </div>
+
+        <!-- 13. Arrays -->
+        <div class="card">
+            <h2>13. Arrays</h2>
+            <div>Ein Array erstellen:</div>
+            <pre><code>let fruits = ['Apfel', 'Banane', 'Kirsche'];
+console.log(fruits[1]);</code></pre>
+            <div><strong>Übung:</strong> Was wird ausgegeben?</div>
+            <label>
+                <input type="radio" name="q13" value="correct"> Banane
+            </label>
+            <label>
+                <input type="radio" name="q13" value="incorrect"> Apfel
+            </label>
+            <button onclick="check(13)">Prüfen</button>
+            <div id="r13"></div>
+        </div>
+
+        <!-- 14. Array push -->
+        <div class="card">
+            <h2>14. Array push</h2>
+            <div>Ein Element hinzufügen:</div>
+            <pre><code>let arr = [1, 2];
+arr.push(3);
+console.log(arr.length);</code></pre>
+            <div><strong>Übung:</strong> Was zeigt die Konsole?</div>
+            <label>
+                <input type="radio" name="q14" value="correct"> 3
+            </label>
+            <label>
+                <input type="radio" name="q14" value="incorrect"> 2
+            </label>
+            <button onclick="check(14)">Prüfen</button>
+            <div id="r14"></div>
+        </div>
+
+        <!-- 15. Objekte -->
+        <div class="card">
+            <h2>15. Objekte</h2>
+            <div>Objekt mit Eigenschaften:</div>
+            <pre><code>let person = {name: 'Anna', age: 25};
+console.log(person.name);</code></pre>
+            <div><strong>Übung:</strong> Was wird ausgegeben?</div>
+            <label>
+                <input type="radio" name="q15" value="correct"> Anna
+            </label>
+            <label>
+                <input type="radio" name="q15" value="incorrect"> 25
+            </label>
+            <button onclick="check(15)">Prüfen</button>
+            <div id="r15"></div>
+        </div>
+
+        <!-- 16. Template-Strings -->
+        <div class="card">
+            <h2>16. Template-Strings</h2>
+            <div>Mit Backticks und ${}: </div>
+            <pre><code>let name = 'Ben';
+console.log(`Hallo, ${name}!`);</code></pre>
+            <div><strong>Übung:</strong> Was zeigt die Konsole?</div>
+            <label>
+                <input type="radio" name="q16" value="correct"> Hallo, Ben!
+            </label>
+            <label>
+                <input type="radio" name="q16" value="incorrect"> Hallo, ${name}!
+            </label>
+            <button onclick="check(16)">Prüfen</button>
+            <div id="r16"></div>
+        </div>
+
+        <!-- 17. Arrow-Funktionen -->
+        <div class="card">
+            <h2>17. Arrow-Funktionen</h2>
+            <div>Kurzschreibweise:</div>
+            <pre><code>const quad = x => x * x;
+console.log(quad(5));</code></pre>
+            <div><strong>Übung:</strong> Was wird ausgegeben?</div>
+            <label>
+                <input type="radio" name="q17" value="incorrect"> 25x
+            </label>
+            <label>
+                <input type="radio" name="q17" value="correct"> 25
+            </label>
+            <button onclick="check(17)">Prüfen</button>
+            <div id="r17"></div>
+        </div>
+
+        <!-- 18. DOM-Auswahl -->
+        <div class="card">
+            <h2>18. DOM-Auswahl</h2>
+            <div>Element über ID auswählen:</div>
+            <pre><code>// Angenommen: <div id="demo">Test</div>
+console.log(document.getElementById('demo').innerText);</code></pre>
+            <div><strong>Übung:</strong> Was wird geloggt?</div>
+            <label>
+                <input type="radio" name="q18" value="correct"> Test
+            </label>
+            <label>
+                <input type="radio" name="q18" value="incorrect"> demo
+            </label>
+            <button onclick="check(18)">Prüfen</button>
+            <div id="r18"></div>
+        </div>
+
+    </div>
+
+    <script>
+        function check(i) {
+            let selected = document.querySelector(`input[name="q${i}"]:checked`)
+            if (selected?.value == `correct`) {
+                document.getElementById(`r${i}`).innerHTML = '✅ Super, das ist richtig!!';
+            } else {
+                document.getElementById(`r${i}`).innerHTML = '❌ Die Antwort ist falsch!!';
+            }
+        }
+    </script>
 </body>
+
 </html>
