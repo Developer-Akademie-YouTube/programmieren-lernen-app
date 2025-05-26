@@ -1,0 +1,19 @@
+{
+  "name": "Programmieren lernen Quiz App",
+  "short_name": "Programmieren lernen",
+  "description": "Simple App zum Programmieren lernen mit kleinen Quizfragen. Das hier ist die App zum YouTube Tutorial vom Kanal \"Programmieren lernen\"",
+  "icons": [
+    {
+      "src": "/icons/android/play_store_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#F2F5F8",
+  "background_color": "#F2F5F8",
+  "lang": "de-DE"
+}
